@@ -1,0 +1,12 @@
+﻿@model HomeWork4.Entites.Product;
+
+<div class="col-lg-4 col-md-6 text-center strawberry">
+	<div class="single-product-item">
+		<div class="product-image">
+			<a asp-controller="Shop" asp-action="SingleProduct"><img src="~/assets/img/products/@Model.ImgName" alt=""></a>
+		</div>
+		<h3>@Model.Name</h3>
+		<p class="product-price"><span>Per Kg</span> @Model.Price </p>
+		<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+	</div>
+</div>

@@ -1,0 +1,108 @@
+﻿@{
+	string actionName = ViewContext.RouteData.Values["action"].ToString();
+	string controllerName = ViewContext.RouteData.Values["controller"].ToString();
+
+	var style1 = "";
+	var condition1 = (actionName == "Index" ? style1 = "color: #F28123;" : style1 = "color: white;");
+
+	var style2 = "";
+	var condition2 = (actionName == "About" ? style2 = "color: #F28123;" : style2 = "color: white;");
+
+	var style3 = "";
+	var condition3 = (actionName == "New" ? style3 = "color: #F28123;" : style3 = "color: white;");
+
+	var style4 = "";
+	var condition4 = (actionName == "Contact" ? style4 = "color: #F28123;" : style4 = "color: white;");
+
+	var style5 = "";
+	var condition5 = (actionName == "Shop" ? style5 = "color: #F28123;" : style5 = "color: white;");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="~/assets/css/all.min.css">
+	<link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="~/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="~/assets/css/animate.css">
+	<link rel="stylesheet" href="~/assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="~/assets/css/main.css">
+	<link rel="stylesheet" href="~/assets/css/responsive.css">
+</head>
+<body>
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index.html">
+								<img src="~/assets/img/logo.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item">
+									<a asp-controller="Home" asp-action="index" style="@style1">Home</a>
+									<ul class="sub-menu">
+										<li><a href="index.html">Static Home</a></li>
+									</ul>
+								</li>
+								<li><a asp-controller="About" asp-action="about" style="@style2">About</a></li>
+								<li>
+									<a asp-controller="News" asp-action="new" style="@style3">News</a>
+									<ul class="sub-menu">
+										<li><a href="news.html">News</a></li>
+										<li><a href="single-news.html">Single News</a></li>
+									</ul>
+								</li>
+								<li><a asp-controller="Contact" asp-action="contact" style="@style4">Contact</a></li>
+								<li>
+									<a asp-controller="Shop" asp-action="shop" style="@style5">Shop</a>
+									<ul class="sub-menu">
+										<li><a href="shop.html">Shop</a></li>
+										<li><a asp-controller="Shop" asp-action="SingleProduct">Single Product</a></li>
+										<li><a href="cart.html">Cart</a></li>
+									</ul>
+								</li>
+								<li>
+									<div class="header-icons">
+										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    @RenderBody()
+
+	<script src="~/assets/js/jquery-1.11.3.min.js"></script>
+	<script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="~/assets/js/jquery.countdown.js"></script>
+	<script src="~/assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<script src="~/assets/js/waypoints.js"></script>
+	<script src="~/assets/js/owl.carousel.min.js"></script>
+	<script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="~/assets/js/jquery.meanmenu.min.js"></script>
+	<script src="~/assets/js/sticker.js"></script>
+	<script src="~/assets/js/main.js"></script>
+</body>
+</html>
