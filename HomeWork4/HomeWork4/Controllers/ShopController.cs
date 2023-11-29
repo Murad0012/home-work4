@@ -1,4 +1,6 @@
-﻿using HomeWork4.Models;
+﻿using HomeWork4.Data;
+using HomeWork4.Entites;
+using HomeWork4.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,7 +10,9 @@ namespace HomeWork4.Controllers
 	{
 		public IActionResult Shop()
 		{
-			return View();
+			var product = new ShopModel();
+			product.Products = ProductRepository.GetProducts();
+			return View(product);
 		}
 
 		public IActionResult SingleProduct()
